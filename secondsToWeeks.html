@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weeks to seconds</title>
+</head>
+<body>
+    <h1>How many second in how many weeks</h1>
+    <h2>There are 604800 seconds in a week</h2>
+    <form>
+        <label for="noWeeks">Select number of weeks
+            <input type="number" name="noWeeks" />
+        </label>
+        <input type="submit" name="find ouT NOW!">
+    </form>
+    <h3></h3>
+    
+
+    <script> 
+      const form = document.querySelector('form');
+      form.addEventListener("submit", numSecs) 
+
+      function numSecs(event) {
+        event.preventDefault();
+        const noWeeks = Number(event.target.noWeeks.value);
+        const secsInWeek = 604800;
+        const eval = noWeeks * secsInWeek;
+        document.querySelector('h3').innerText = "There are " + eval + " seconds in " + noWeeks + " week(s).";
+      }
+
+    </script>
+</body>
+</html>
