@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squaring a numner</title>
+</head>
+<body>
+    <h1>Enter a  number and an exponent.</h1>
+    <form>
+      <label for="num">Enter a number
+        <input type="number" name="num">
+      </label>  
+      <label for="exp">Enter another number as an exponent.
+        <input type="number" name="exp">
+      </label>  
+      <input type="submit" value="Click me"/>
+      <h2></h2>
+    </form>
+   <script>
+    const form = document.querySelector('form');
+    form.addEventListener("submit", computeExponent);
+    
+    function computeExponent(event) {
+        event.preventDefault();
+        const num = event.target.num.value;
+        const exp = event.target.exp.value;
+        const eval = Math.pow(num, exp);
+
+        document.querySelector('h2').innerHTML = num  + "<sup>" + exp +   "</sup>" + " =  " + eval + ".";
+    }
+    
+    
+   </script> 
+</body>
+</html>
